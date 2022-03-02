@@ -1,3 +1,4 @@
+# Virtual Assistant Graduation project
 To execute the program
 in the CMD run
 python main.py
