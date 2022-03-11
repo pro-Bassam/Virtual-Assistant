@@ -17,4 +17,4 @@ To execute the program in the CMD run
 
 List of featchers:
 
-- Take a note.
+- Take a note
