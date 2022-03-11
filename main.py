@@ -5,12 +5,11 @@ import os
 from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
+from functions.playSong import *
 from functions.wikioedia import *
-
 
 # RUNNING
 terminator = 1
-
 assistantResponce("boot up started, waiting for your call")
 while terminator:
     # Record audio as string
@@ -29,6 +28,11 @@ while terminator:
                     today = datetime.date.today()
                     assistantResponce(today)
                     work = 0
+
+            # Play a music by name
+            if 'play' in text and work:
+                play_music(text)
+                work = 0
 
             # Search in wikipedia
             for phrase in SEARCH_KEY_WORDS:
@@ -51,7 +55,8 @@ while terminator:
                 if phrase in text and work:
                     terminator = 0
                     assistantResponce("shutting down the system")
-                    assistantResponce("you will need to power off and on again")
+                    assistantResponce(
+                        "you will need to power off and on again")
                     quit()
-            if work==1:
+            if work == 1:
                 assistantResponce("Sorry I don't understand")
