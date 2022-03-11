@@ -18,9 +18,9 @@ while terminator:
     # Start functioning when it is called
     for phrase in WAKE_WORDS:
         if phrase in text:
+            work = 1
             assistantResponce("yes")
             text = recordAduio()
-            work = 1
 
             # Get the cuurent date
             for phrase in TODAY_DATE:
@@ -44,8 +44,7 @@ while terminator:
             # Make a note
             for phrase in NOTE_STRS:
                 if phrase in text and work:
-                    assistantResponce(
-                        "What would you like me to write down?")
+                    assistantResponce("What would you like me to write down?")
                     write_down = recordAduio()
                     makeNote(write_down)
                     assistantResponce("I've made a note of that.")
