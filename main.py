@@ -5,7 +5,7 @@ import os
 from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
-from functions.playSong import play_music
+from functions.playSong import *
 from functions.wikioedia import *
 
 # RUNNING

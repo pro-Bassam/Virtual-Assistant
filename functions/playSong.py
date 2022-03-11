@@ -1,7 +1,7 @@
+from pytube import YouTube
+import time
+import pyautogui
 import pywhatkit
-
-import os
-os.add_dll_directory(r'C:/Program Files/VideoLAN/VLC')
 
 
 def getSongName(text):
@@ -9,4 +9,8 @@ def getSongName(text):
 
 
 def play_music(text):
-    pywhatkit.playonyt(getSongName(text))
+    songName = getSongName(text)
+    url = pywhatkit.playonyt(songName)
+    yt = YouTube(url)
+    time.sleep(yt.length + 20)
+    pyautogui.hotkey('ctrl', 'w')
