@@ -1,0 +1,4 @@
+# dependencies
+/__pycache__
+data/__pycache__/
+functions/__pycache__/
