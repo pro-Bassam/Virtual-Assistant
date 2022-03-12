@@ -6,7 +6,7 @@ from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
 from functions.wikioedia import *
-from functions.rollaDic import rollADic
+from functions.rollaDice import rollADice
 from functions.headsOrTails import headsOrTails
 from functions.playSong import *
 
@@ -40,8 +40,8 @@ while terminator:
                     work = 0
 
             # Roll A Dic
-            if "roll a dic" in text and work:
-                assistantResponce(rollADic())
+            if "roll a dice" in text and work:
+                assistantResponce(rollADice())
                 work = 0
 
             #Heads or Tails
