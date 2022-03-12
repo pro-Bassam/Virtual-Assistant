@@ -6,7 +6,7 @@ from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
 from functions.playSong import *
-from functions.timer import runTimer, setTimer
+from functions.timer import runTimer, setTimer, timerChecker
 from functions.translation_to_french import trans
 from functions.wikioedia import *
 from functions.rollDie import *
@@ -26,15 +26,7 @@ while terminator:
     text = recordAduio()
 
     # Run timer if the time ended
-    with open("data/timer.txt", 'r') as Text:
-        try:
-            timerTime = int(Text.read())
-        except:
-            timerTime = 0
-
-    timeNow = round(time.time() * 1000)
-    if timeNow >= timerTime and timerTime != 0:
-        runTimer()
+    timerChecker()
 
     # Start functioning when it is called
     for phrase in WAKE_WORDS:

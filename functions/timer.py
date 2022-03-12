@@ -56,3 +56,15 @@ def runTimer():
     f = open("data/timer.txt", "w")
     f.write('')
     f.close()
+
+
+def timerChecker():
+    with open("data/timer.txt", 'r') as Text:
+        try:
+            timerTime = int(Text.read())
+        except:
+            timerTime = 0
+
+    timeNow = round(time.time() * 1000)
+    if timeNow >= timerTime and timerTime != 0:
+        runTimer()
