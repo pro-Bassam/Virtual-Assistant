@@ -6,7 +6,6 @@ from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
 from functions.wikioedia import *
-from functions.rollaDice import rollADice
 from functions.headsOrTails import headsOrTails
 from functions.playSong import *
 from functions.weather import weather
@@ -55,11 +54,6 @@ while terminator:
             # Rock Paper Scissors
             if "rock paper scissors" in text and work:
                 assistantResponce(rockPaperScissors())
-                work = 0
-
-            # Roll A Dic
-            if "roll a dice" in text and work:
-                assistantResponce(rollADice())
                 work = 0
 
             #Heads or Tails
