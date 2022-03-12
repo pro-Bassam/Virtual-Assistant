@@ -5,8 +5,11 @@ import os
 from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
-from functions.playSong import *
 from functions.wikioedia import *
+from functions.rollaDic import rollADic
+from functions.headsOrTails import headsOrTails
+from functions.weather import weather
+
 
 # RUNNING
 terminator = 1
@@ -22,17 +25,12 @@ while terminator:
             assistantResponce("yes")
             text = recordAduio()
 
-            # Get the cuurent date
+            # Get the current date
             for phrase in TODAY_DATE:
                 if phrase in text and work:
                     today = datetime.date.today()
                     assistantResponce(today)
                     work = 0
-
-            # Play a music by name
-            if 'play' in text and work:
-                play_music(text)
-                work = 0
 
             # Search in wikipedia
             for phrase in SEARCH_KEY_WORDS:
@@ -41,6 +39,15 @@ while terminator:
                     assistantResponce(responce)
                     work = 0
 
+            # Roll A Dic
+            if "roll a dic" in text and work:
+                assistantResponce(rollADic())
+                work = 0
+
+            #Heads or Tails
+            if "heads or tails" in text and work:
+                assistantResponce(headsOrTails())
+                work = 0
             # Make a note
             for phrase in NOTE_STRS:
                 if phrase in text and work:
