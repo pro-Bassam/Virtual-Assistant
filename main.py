@@ -6,6 +6,7 @@ from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
 from functions.playSong import *
+from functions.timer import setTimer
 from functions.wikioedia import *
 
 # RUNNING
@@ -39,6 +40,14 @@ while terminator:
                 if phrase in text and work:
                     responce = searchAbout(text)
                     assistantResponce(responce)
+                    work = 0
+
+            # set a timer
+            if 'set a timer' in text and work:
+                result = setTimer(text)
+                if result == 0:
+                    assistantResponce("can not set this timer try again")
+                else:
                     work = 0
 
             # Make a note
