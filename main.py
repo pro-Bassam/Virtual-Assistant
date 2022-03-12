@@ -6,7 +6,7 @@ from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
 from functions.playSong import *
-from functions.timer import setTimer
+from functions.timer import runTimer, setTimer, timerChecker
 from functions.translation_to_french import trans
 from functions.wikioedia import *
 from functions.rollDie import *
@@ -24,6 +24,9 @@ assistantResponce("boot up started, waiting for your call")
 while terminator:
     # Record audio as string
     text = recordAduio()
+
+    # Run timer if the time ended
+    timerChecker()
 
     # Start functioning when it is called
     for phrase in WAKE_WORDS:
@@ -47,12 +50,15 @@ while terminator:
                     work = 0
 
             # set a timer
-            if 'set a timer' in text and work:
-                result = setTimer(text)
-                if result == 0:
-                    assistantResponce("can not set this timer try again")
-                else:
-                    work = 0
+            for phrase in TIMER_KEY_WORDS:
+                if phrase in text and work:
+                    result = setTimer(text)
+                    if result == 0:
+                        assistantResponce("can not set this timer try again")
+                    else:
+                        assistantResponce(
+                            f"Timer is seted successfully {result}")
+                        work = 0
 
             # Get Weather Temperature
             if "give me the temperature in" in text and work:
@@ -115,6 +121,6 @@ while terminator:
                     assistantResponce(
                         "you will need to power off and on again")
                     quit()
-            
+
             if work == 1:
                 assistantResponce("Sorry I don't understand")

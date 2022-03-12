@@ -16,5 +16,6 @@ NOTE_STRS = ["make a note", "write this down", "remember this", "type this"]
 
 SEARCH_KEY_WORDS = ["who is", "what is"]
 
-TRANSLATE_KEY_WORDS=["translate to french","translation"]
+TRANSLATE_KEY_WORDS = ["translate to french", "translation"]
 
+TIMER_KEY_WORDS = ['set a timer', 'set an alarm', 'timer', 'alarm']
