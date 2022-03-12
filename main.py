@@ -8,7 +8,7 @@ from functions.note import *
 from functions.playSong import *
 from functions.translation_to_french import trans
 from functions.wikioedia import *
-from functions.flipCoin_rollDie import *
+from functions.rollDie import *
 from functions.headsOrTails import headsOrTails
 from functions.playSong import *
 from functions.weather import weather
@@ -37,23 +37,6 @@ while terminator:
                     today = datetime.date.today()
                     assistantResponce(today)
                     work = 0
-
-            # roll a die
-            if 'roll a die' in text and work:
-                result = rollDie()
-                assistantResponce(result)
-                work = 0
-
-            # flip a coin
-            if 'flip a coin' in text and work:
-                result = flipCoin()
-                assistantResponce(result)
-                work = 0
-
-            # Play a music by name
-            if 'play' in text and work:
-                play_music(text)
-                work = 0
 
             # Search in wikipedia
             for phrase in SEARCH_KEY_WORDS:
@@ -85,6 +68,11 @@ while terminator:
             #Heads or Tails
             if "flip a coin" in text and work:
                 assistantResponce(headsOrTails())
+                work = 0
+
+            # roll a die
+            if 'roll a die' in text and work:
+                assistantResponce(rollDie())
                 work = 0
 
             # Play a music by name
