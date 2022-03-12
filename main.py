@@ -48,7 +48,7 @@ while terminator:
                 work = 0
 
             # Pick a Card
-            if "pick a card" in text and work:
+            if "pick a card" or "flip a coin" in text and work:
                 assistantResponce(pickCard())
                 work = 0
 
@@ -57,7 +57,7 @@ while terminator:
                 assistantResponce(rockPaperScissors())
                 work = 0
 
-            # Roll A Dic
+            # Roll A Dice
             if "roll a dice" in text and work:
                 assistantResponce(rollADice())
                 work = 0
