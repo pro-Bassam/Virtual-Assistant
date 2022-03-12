@@ -11,6 +11,7 @@ from functions.headsOrTails import headsOrTails
 from functions.playSong import *
 from functions.weather import weather
 from functions.pickaCard import pickCard
+from functions.rockPaperScissors import rockPaperScissors
 
 
 # RUNNING
@@ -49,6 +50,11 @@ while terminator:
             # Pick a Card
             if "pick a card" in text and work:
                 assistantResponce(pickCard())
+                work = 0
+
+            # Rock Paper Scissors
+            if "rock paper scissors" in text and work:
+                assistantResponce(rockPaperScissors())
                 work = 0
 
             # Roll A Dic

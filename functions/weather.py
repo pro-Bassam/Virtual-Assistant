@@ -20,4 +20,4 @@ def weather(text):
     return "current temperature is "+weather+" celsius have a nice day"
 
 
-print(weather("give me the temperature at New York"))
+#print(weather("give me the temperature at New York"))

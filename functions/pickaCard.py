@@ -9,4 +9,4 @@ def pickCard():
     return(f"The {rank} of {card}")
 
 
-print(pickCard())
+# print(pickCard())
