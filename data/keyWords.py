@@ -15,3 +15,6 @@ TODAY_DATE = ["what is today", "what is the date", "what is the day"]
 NOTE_STRS = ["make a note", "write this down", "remember this", "type this"]
 
 SEARCH_KEY_WORDS = ["who is", "what is"]
+
+TRANSLATE_KEY_WORDS=["translate to french","translation"]
+
