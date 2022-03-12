@@ -7,6 +7,7 @@ from functions.googleEngine import *
 from functions.note import *
 from functions.playSong import *
 from functions.wikioedia import *
+from functions.flipCoin_rollDie import *
 
 # RUNNING
 terminator = 1
@@ -28,6 +29,18 @@ while terminator:
                     today = datetime.date.today()
                     assistantResponce(today)
                     work = 0
+
+            # roll a die
+            if 'roll a die' in text and work:
+                result = rollDie()
+                assistantResponce(result)
+                work = 0
+
+            # flip a coin
+            if 'flip a coin' in text and work:
+                result = flipCoin()
+                assistantResponce(result)
+                work = 0
 
             # Play a music by name
             if 'play' in text and work:
