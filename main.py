@@ -98,6 +98,15 @@ while terminator:
                     assistantResponce("I've made a note of that.")
                     work = 0
 
+            # Translate to French
+            for phrase in TRANSLATE_KEY_WORDS:
+                if phrase in text and work:
+                    assistantResponce("I am listening.")
+                    sentence = recordAduio()
+                    responce = trans(sentence)
+                    assistantResponce(responce)
+                    work = 0
+
             # Terminate the running
             for phrase in BREAK_WORDS:
                 if phrase in text and work:
