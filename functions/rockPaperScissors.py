@@ -4,7 +4,7 @@ options = ["rock", "paper", "scissors"]
 
 def rockPaperScissors():
     option = random.choices(options)
-    return(option)
+    return(option[0])
 
 
-# print(rockPaperScissors())
+print(rockPaperScissors())
