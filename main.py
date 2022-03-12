@@ -6,6 +6,7 @@ from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
 from functions.wikioedia import *
+from functions.rollDie import *
 from functions.headsOrTails import headsOrTails
 from functions.playSong import *
 from functions.weather import weather
@@ -65,6 +66,11 @@ while terminator:
             #Heads or Tails
             if "flip a coin" in text and work:
                 assistantResponce(headsOrTails())
+                work = 0
+
+            # roll a die
+            if 'roll a die' in text and work:
+                assistantResponce(rollDie())
                 work = 0
 
             # Play a music by name

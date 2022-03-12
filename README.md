@@ -8,6 +8,7 @@ First download the required packages
 - `pip install wikipedia`
 - `pip install PyAudio`
 - `pip install Flask`
+- `pip install pygame`
 
 To execute the program in the CMD run
 
