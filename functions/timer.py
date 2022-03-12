@@ -23,11 +23,10 @@ def setTimer(text):
         time.sleep(duration)
         mixer.init()
         mixer.music.load(
-            "records/timerSound.wav ")
+            "data/records/timerSound.wav")
         mixer.music.play()
         while mixer.music.get_busy():  # wait for music to finish playing
             time.sleep(1)
         return 1
     except:
-        print('can not set the timer try again')
         return 0
