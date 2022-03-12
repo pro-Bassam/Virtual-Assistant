@@ -5,6 +5,9 @@ import os
 from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
+from functions.playSong import *
+from functions.timer import setTimer
+from functions.translation_to_french import trans
 from functions.wikioedia import *
 from functions.rollDie import *
 from functions.headsOrTails import headsOrTails
@@ -41,6 +44,14 @@ while terminator:
                 if phrase in text and work:
                     responce = searchAbout(text)
                     assistantResponce(responce)
+                    work = 0
+
+            # set a timer
+            if 'set a timer' in text and work:
+                result = setTimer(text)
+                if result == 0:
+                    assistantResponce("can not set this timer try again")
+                else:
                     work = 0
 
             # Get Weather Temperature
