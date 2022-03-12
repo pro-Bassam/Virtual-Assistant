@@ -17,7 +17,7 @@ def weather(text):
         f'https://www.google.com/search?q={city}&oq={city}&aqs=chrome.0.35i39l2j0l4j46j69i60.6128j1j7&sourceid=chrome&ie=UTF-8', headers=headers)
     soup = BeautifulSoup(res.text, 'html.parser')
     weather = soup.select('#wob_tm')[0].getText().strip()
-    return "current temperature is "+weather+" celsius have a nice day"
+    return "current temperature is "+weather+" celsius"
 
 
 #print(weather("give me the temperature at New York"))

@@ -115,6 +115,5 @@ while terminator:
                     assistantResponce(
                         "you will need to power off and on again")
                     quit()
-
             if work == 1:
                 assistantResponce("Sorry I don't understand")
