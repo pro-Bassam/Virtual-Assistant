@@ -5,8 +5,6 @@ import os
 from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
-from functions.playSong import *
-from functions.translation_to_french import trans
 from functions.wikioedia import *
 from functions.headsOrTails import headsOrTails
 from functions.playSong import *
@@ -83,15 +81,6 @@ while terminator:
                     assistantResponce("I've made a note of that.")
                     work = 0
 
-            # Translate to French
-            for phrase in TRANSLATE_KEY_WORDS:
-                if phrase in text and work:
-                    assistantResponce("I am listening.")
-                    sentence = recordAduio()
-                    responce = trans(sentence)
-                    assistantResponce(responce)
-                    work = 0
-
             # Terminate the running
             for phrase in BREAK_WORDS:
                 if phrase in text and work:
@@ -100,6 +89,5 @@ while terminator:
                     assistantResponce(
                         "you will need to power off and on again")
                     quit()
-                    
             if work == 1:
                 assistantResponce("Sorry I don't understand")
