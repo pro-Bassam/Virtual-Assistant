@@ -80,7 +80,7 @@ while terminator:
                 assistantResponce(rockPaperScissors())
                 work = 0
 
-            #Heads or Tails
+            # Heads or Tails
             if "flip a coin" in text and work:
                 assistantResponce(headsOrTails())
                 work = 0

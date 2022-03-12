@@ -7,4 +7,4 @@ def rockPaperScissors():
     return(option[0])
 
 
-print(rockPaperScissors())
+# print(rockPaperScissors())

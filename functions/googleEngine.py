@@ -14,7 +14,8 @@ def recordAduio():
         data = r.recognize_google(audio)
         print(data)
     except sr.UnknownValueError:
-        assistantResponce("Sorry, I don't understand")
+        # assistantResponce("Sorry, I don't understand")
+        pass
     except sr.RequestError as e:
         print(
             "Could not request results from Google Speech Recognition service; {0}".format(e))
