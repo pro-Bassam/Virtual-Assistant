@@ -1,4 +1,3 @@
-from word2number import w2n
 import time
 from pygame import mixer
 
@@ -32,6 +31,3 @@ def setTimer(text):
     except:
         print('can not set the timer try again')
         return 0
-
-
-setTimer('set timer for 2 seconds')
