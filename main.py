@@ -8,6 +8,7 @@ from functions.note import *
 from functions.playSong import *
 from functions.translation_to_french import trans
 from functions.wikioedia import *
+from functions.rollDie import *
 from functions.headsOrTails import headsOrTails
 from functions.playSong import *
 from functions.weather import weather
@@ -69,6 +70,11 @@ while terminator:
                 assistantResponce(headsOrTails())
                 work = 0
 
+            # roll a die
+            if 'roll a die' in text and work:
+                assistantResponce(rollDie())
+                work = 0
+
             # Play a music by name
             if 'play' in text and work:
                 play_music(text)
@@ -100,6 +106,6 @@ while terminator:
                     assistantResponce(
                         "you will need to power off and on again")
                     quit()
-                    
+
             if work == 1:
                 assistantResponce("Sorry I don't understand")
