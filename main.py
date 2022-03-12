@@ -8,7 +8,7 @@ from functions.note import *
 from functions.wikioedia import *
 from functions.rollaDic import rollADic
 from functions.headsOrTails import headsOrTails
-from functions.weather import weather
+from functions.playSong import *
 
 
 # RUNNING
@@ -48,6 +48,12 @@ while terminator:
             if "heads or tails" in text and work:
                 assistantResponce(headsOrTails())
                 work = 0
+
+            # Play a music by name
+            if 'play' in text and work:
+                play_music(text)
+                work = 0
+
             # Make a note
             for phrase in NOTE_STRS:
                 if phrase in text and work:
