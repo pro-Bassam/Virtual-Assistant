@@ -9,6 +9,7 @@ from functions.wikioedia import *
 from functions.rollaDice import rollADice
 from functions.headsOrTails import headsOrTails
 from functions.playSong import *
+from functions.weather import weather
 
 
 # RUNNING
@@ -38,6 +39,11 @@ while terminator:
                     responce = searchAbout(text)
                     assistantResponce(responce)
                     work = 0
+
+            # Get Weather Temperature
+            if "give me the temperature in" in text and work:
+                assistantResponce(weather(text))
+                work = 0
 
             # Roll A Dic
             if "roll a dice" in text and work:
