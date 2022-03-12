@@ -13,6 +13,7 @@ from functions.playSong import *
 from functions.weather import weather
 from functions.pickaCard import pickCard
 from functions.rockPaperScissors import rockPaperScissors
+from functions.factGenerator import factGenerator
 
 
 # RUNNING
@@ -53,13 +54,18 @@ while terminator:
                 assistantResponce(pickCard())
                 work = 0
 
+            # Facts Generator
+            if "tell me a fact" in text and work:
+                assistantResponce(factGenerator())
+                work = 0
+
             # Rock Paper Scissors
             if "rock paper scissors" in text and work:
                 assistantResponce(rockPaperScissors())
                 work = 0
 
             #Heads or Tails
-            if "heads or tails" in text and work:
+            if "flip a coin" in text and work:
                 assistantResponce(headsOrTails())
                 work = 0
 
