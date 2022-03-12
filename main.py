@@ -10,6 +10,7 @@ from functions.rollaDice import rollADice
 from functions.headsOrTails import headsOrTails
 from functions.playSong import *
 from functions.weather import weather
+from functions.pickaCard import pickCard
 
 
 # RUNNING
@@ -43,6 +44,11 @@ while terminator:
             # Get Weather Temperature
             if "give me the temperature in" in text and work:
                 assistantResponce(weather(text))
+                work = 0
+
+            # Pick a Card
+            if "pick a card" in text and work:
+                assistantResponce(pickCard())
                 work = 0
 
             # Roll A Dic
