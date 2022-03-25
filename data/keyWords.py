@@ -6,7 +6,7 @@ DAYS = ["monday", "tuesday", "wednesday",
 
 DAY_EXTENTIONS = ["rd", "th", "st", "nd"]
 
-WAKE_WORDS = ['hey computer', 'ok computer']
+WAKE_WORDS = ['hey computer', 'ok computer', 'hey olivia', 'hey oliva', 'hey olva', 'ok olivia']
 
 BREAK_WORDS = ["break", "bye", "goodbye", "shut down"]
 
