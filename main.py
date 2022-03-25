@@ -114,13 +114,13 @@ while terminator:
                     work = 0
 
             # Terminate the running
-            for phrase in BREAK_WORDS:
-                if phrase in text and work:
-                    terminator = 0
-                    assistantResponce("shutting down the system")
-                    assistantResponce(
-                        "you will need to power off and on again")
-                    quit()
+            # for phrase in BREAK_WORDS:
+            #     if phrase in text and work:
+            #         terminator = 0
+            #         assistantResponce("shutting down the system")
+            #         assistantResponce(
+            #             "you will need to power off and on again")
+            #         quit()
 
             if work == 1:
                 assistantResponce("Sorry I don't understand")
