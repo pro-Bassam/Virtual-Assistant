@@ -6,7 +6,7 @@ from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
 from functions.playSong import *
-from functions.timer import runTimer, setTimer, timerChecker
+from functions.timer import cancelTimer, setTimer, timerChecker
 from functions.translation_to_french import trans
 from functions.wikioedia import *
 from functions.rollDie import *
@@ -16,6 +16,7 @@ from functions.weather import weather
 from functions.pickaCard import pickCard
 from functions.rockPaperScissors import rockPaperScissors
 from functions.factGenerator import factGenerator
+from functions.currancy_converter import currency
 
 
 # RUNNING
@@ -35,6 +36,13 @@ while terminator:
             assistantResponce("yes")
             text = recordAduio()
 
+            # personal info
+            for phrase in NAME_KEYWORDS:
+                if phrase in text and work:
+                    for answer in PERSONAL_INFORMATIONS:
+                        assistantResponce(answer)
+                        work = 0
+
             # Get the current date
             for phrase in TODAY_DATE:
                 if phrase in text and work:
@@ -49,6 +57,13 @@ while terminator:
                     assistantResponce(responce)
                     work = 0
 
+            # cancel a timer
+            for phrase in CANCEL_TIMER_KEY_WORDS:
+                if phrase in text and work:
+                    cancelTimer()
+                    assistantResponce("the timer is canceled successfully")
+                    work = 0
+
             # set a timer
             for phrase in TIMER_KEY_WORDS:
                 if phrase in text and work:
@@ -57,7 +72,7 @@ while terminator:
                         assistantResponce("can not set this timer try again")
                     else:
                         assistantResponce(
-                            f"Timer is seted successfully {result}")
+                            f"Timer is seted successfully for {result}")
                         work = 0
 
             # Get Weather Temperature
@@ -110,6 +125,16 @@ while terminator:
                     assistantResponce("I am listening.")
                     sentence = recordAduio()
                     responce = trans(sentence)
+                    assistantResponce(responce)
+                    work = 0
+
+            for phrase in CUURENCY_KEY_WORDS:
+                if phrase in text and work:
+
+                    assistantResponce("what amount")
+                    amount=recordAduio()
+                    amount=int(amount)
+                    responce=currency(text,amount)
                     assistantResponce(responce)
                     work = 0
 

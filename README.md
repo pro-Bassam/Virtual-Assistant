@@ -9,6 +9,7 @@ First download the required packages
 - `pip install PyAudio`
 - `pip install Flask`
 - `pip install pygame`
+- `pip install py_currency_converter`
 
 To execute the program in the CMD run
 
