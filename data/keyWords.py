@@ -6,7 +6,8 @@ DAYS = ["monday", "tuesday", "wednesday",
 
 DAY_EXTENTIONS = ["rd", "th", "st", "nd"]
 
-WAKE_WORDS = ['hey computer', 'ok computer', 'hey olivia', 'hey oliva', 'hey olva', 'ok olivia']
+WAKE_WORDS = ['hey computer', 'ok computer',
+              'hey olivia', 'hey oliva', 'hey olva', 'ok olivia']
 
 BREAK_WORDS = ["break", "bye", "goodbye", "shut down"]
 
@@ -19,3 +20,6 @@ SEARCH_KEY_WORDS = ["who is", "what is"]
 TRANSLATE_KEY_WORDS = ["translate to french", "translation"]
 
 TIMER_KEY_WORDS = ['set a timer', 'set an alarm', 'timer', 'alarm']
+
+CANCEL_TIMER_KEY_WORDS = ['cancel timer',
+                          'cancel the timer', 'cancel alarm', 'cancel the alarm']

@@ -6,7 +6,7 @@ from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
 from functions.playSong import *
-from functions.timer import runTimer, setTimer, timerChecker
+from functions.timer import cancelTimer, setTimer, timerChecker
 from functions.translation_to_french import trans
 from functions.wikioedia import *
 from functions.rollDie import *
@@ -49,6 +49,13 @@ while terminator:
                     assistantResponce(responce)
                     work = 0
 
+            # cancel a timer
+            for phrase in CANCEL_TIMER_KEY_WORDS:
+                if phrase in text and work:
+                    cancelTimer()
+                    assistantResponce("the timer is canceled successfully")
+                    work = 0
+
             # set a timer
             for phrase in TIMER_KEY_WORDS:
                 if phrase in text and work:
@@ -57,7 +64,7 @@ while terminator:
                         assistantResponce("can not set this timer try again")
                     else:
                         assistantResponce(
-                            f"Timer is seted successfully {result}")
+                            f"Timer is seted successfully for {result}")
                         work = 0
 
             # Get Weather Temperature

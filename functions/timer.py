@@ -5,42 +5,30 @@ from pygame import mixer
 categores = ['seconds', 'second', 'minutes', 'minute', 'hours', 'hour']
 
 
-def getDurition(text):
+def getTimePeriod(text):
     wordList = text.split()
-
     for i in range(0, len(wordList)):
-        if wordList[i].lower() == 'for' or wordList[i].lower() == 'after':
-            duration = int(wordList[i+1])
-            flag = i+2
-
-    for i in range(flag, len(wordList)):
         if wordList[i] in categores:
             if wordList[i] in ['minutes', 'minute']:
-                duration *= 60
-                return duration
+                return [int(wordList[i-1]) * 60, f"{wordList[i-1]} {wordList[i]}"]
             elif wordList[i] in ['hours', 'hour']:
-                duration *= 60 * 60
-                return duration
+                return [int(wordList[i-1]) * 60 * 60, f"{wordList[i-1]} {wordList[i]}"]
             else:
-                return duration
-        else:
-            return 0
+                return [int(wordList[i-1]), f"{wordList[i-1]} {wordList[i]}"]
+    return [0, 0]
 
 
 def setTimer(text):
-    durationInSeconds = getDurition(text)
+    timePeriodInSeconds = getTimePeriod(text)[0]
     try:
-        timeNowInMilliseconds = int(
-            round(time.time() * 1000)) + durationInSeconds * 1000
-        f = open("data/timer.txt", "w")
-        f.write(str(timeNowInMilliseconds))
-        f.close()
+        if timePeriodInSeconds != 0:
+            timePeriodInMilliseconds = int(
+                round(time.time() * 1000)) + timePeriodInSeconds * 1000
+            _file = open("data/timer.txt", "w")
+            _file.write(str(timePeriodInMilliseconds))
+            _file.close()
 
-        for i in range(0, len(text.split())):
-            if text.split()[i].lower() in ['for', 'after']:
-                setText = ' '.join(text.split()[i:])
-
-        return setText
+        return getTimePeriod(text)[1]
     except:
         return 0
 
@@ -53,9 +41,13 @@ def runTimer():
     while mixer.music.get_busy():  # wait for music to finish playing
         time.sleep(1)
 
-    f = open("data/timer.txt", "w")
-    f.write('')
-    f.close()
+    cancelTimer()
+
+
+def cancelTimer():
+    _file = open("data/timer.txt", "w")
+    _file.write('')
+    _file.close()
 
 
 def timerChecker():
