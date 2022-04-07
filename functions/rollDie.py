@@ -11,6 +11,3 @@ def rollDie():
     while mixer.music.get_busy():  # wait for music to finish playing
         time.sleep(1)
     return 'it is ' + str(random.randint(1, 6))
-
-
-# print(rollDie())

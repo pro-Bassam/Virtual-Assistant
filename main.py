@@ -1,7 +1,6 @@
 import datetime
 import time
 import os
-
 from data.keyWords import *
 from functions.googleEngine import *
 from functions.note import *
@@ -17,6 +16,7 @@ from functions.pickaCard import pickCard
 from functions.rockPaperScissors import rockPaperScissors
 from functions.factGenerator import factGenerator
 from functions.currancy_converter import currency
+from functions.jokes import getJoke, playJokeSound
 
 
 # RUNNING
@@ -57,6 +57,16 @@ while terminator:
                     assistantResponce(responce)
                     work = 0
 
+            for phrase in JOKES_KEY_WORDS:
+                if phrase in text and work:
+                    response = getJoke()
+                    if response != 0:
+                        assistantResponce(response)
+                        playJokeSound()
+                        work = 0
+                    else:
+                        assistantResponce("Sorry can you try later")
+
             # cancel a timer
             for phrase in CANCEL_TIMER_KEY_WORDS:
                 if phrase in text and work:
@@ -67,7 +77,9 @@ while terminator:
             # set a timer
             for phrase in TIMER_KEY_WORDS:
                 if phrase in text and work:
-                    result = setTimer(text)
+                    assistantResponce("What is the period")
+                    timePeriod = recordAduio()
+                    result = setTimer(timePeriod)
                     if result == 0:
                         assistantResponce("can not set this timer try again")
                     else:
@@ -132,9 +144,9 @@ while terminator:
                 if phrase in text and work:
 
                     assistantResponce("what amount")
-                    amount=recordAduio()
-                    amount=int(amount)
-                    responce=currency(text,amount)
+                    amount = recordAduio()
+                    amount = int(amount)
+                    responce = currency(text, amount)
                     assistantResponce(responce)
                     work = 0
 
