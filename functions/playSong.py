@@ -1,7 +1,6 @@
-from pytube import YouTube
-import time
-import pyautogui
+import os
 import pywhatkit
+from threading import Thread
 
 
 def getSongName(text):
@@ -10,7 +9,13 @@ def getSongName(text):
 
 def play_music(text):
     songName = getSongName(text)
-    url = pywhatkit.playonyt(songName)
-    yt = YouTube(url)
-    time.sleep(yt.length + 20)
-    pyautogui.hotkey('ctrl', 'w')
+    pywhatkit.playonyt(songName)
+
+
+def run_music(text):
+    music_thread = Thread(target=play_music, args=(text,))
+    music_thread.start()
+
+
+def close_music():
+    os.system("taskkill /im chrome.exe /f")

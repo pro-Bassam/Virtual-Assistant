@@ -117,9 +117,16 @@ while terminator:
                 assistantResponce(rollDie())
                 work = 0
 
+            # cancel music
+            for phrase in CANCEL_MUSIC_KEY_WORDS:
+                if phrase in text and work:
+                    close_music()
+                    assistantResponce("the music is canceled successfully")
+                    work = 0
+
             # Play a music by name
             if 'play' in text and work:
-                play_music(text)
+                run_music(text)
                 work = 0
 
             # Make a note
