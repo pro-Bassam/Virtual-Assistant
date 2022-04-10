@@ -14,7 +14,7 @@ from functions.playSong import *
 from functions.weather import weather
 from functions.pickaCard import pickCard
 from functions.rockPaperScissors import rockPaperScissors
-from functions.factGenerator import factGenerator
+from functions.factGenerator import factGenerator, playFactSound
 from functions.currancy_converter import currency
 from functions.jokes import getJoke, playJokeSound
 
@@ -100,6 +100,7 @@ while terminator:
             # Facts Generator
             if "tell me a fact" in text and work:
                 assistantResponce(factGenerator())
+                playFactSound()
                 work = 0
 
             # Rock Paper Scissors
