@@ -14,9 +14,10 @@ from functions.playSong import *
 from functions.weather import weather
 from functions.pickaCard import pickCard
 from functions.rockPaperScissors import rockPaperScissors
-from functions.factGenerator import factGenerator
+from functions.factGenerator import factGenerator, playFactSound
 from functions.currancy_converter import currency
 from functions.jokes import getJoke, playJokeSound
+from functions.math import *
 
 
 # RUNNING
@@ -57,6 +58,7 @@ while terminator:
                     assistantResponce(responce)
                     work = 0
 
+            # Tell me a Joke
             for phrase in JOKES_KEY_WORDS:
                 if phrase in text and work:
                     response = getJoke()
@@ -100,6 +102,7 @@ while terminator:
             # Facts Generator
             if "tell me a fact" in text and work:
                 assistantResponce(factGenerator())
+                playFactSound()
                 work = 0
 
             # Rock Paper Scissors
@@ -147,9 +150,16 @@ while terminator:
                     assistantResponce(responce)
                     work = 0
 
+            # Math Function
+            for phrase in MATH:
+                if phrase in text and work:
+                    responce = calculate(text)
+                    assistantResponce(responce)
+                    work = 0
+
+            # Currency Converter
             for phrase in CUURENCY_KEY_WORDS:
                 if phrase in text and work:
-
                     assistantResponce("what amount")
                     amount = recordAduio()
                     amount = int(amount)
