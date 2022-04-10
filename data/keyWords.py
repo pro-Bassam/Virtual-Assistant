@@ -38,3 +38,6 @@ CANCEL_TIMER_KEY_WORDS = ['cancel timer',
 CUURENCY_KEY_WORDS = ['convert from']
 
 JOKES_KEY_WORDS = ['tell me a joke', 'can you tell me a joke', 'say a joke']
+
+CANCEL_MUSIC_KEY_WORDS = ['cancel music',
+                          'music stop', 'stop music', 'music cancel']
