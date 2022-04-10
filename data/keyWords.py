@@ -41,3 +41,7 @@ JOKES_KEY_WORDS = ['tell me a joke', 'can you tell me a joke', 'say a joke']
 
 CANCEL_MUSIC_KEY_WORDS = ['cancel music',
                           'music stop', 'stop music', 'music cancel']
+
+
+MATH = ["plus", "+", "Subtract", "-", "mins", "",
+        "multiplied", "multiply", "divided", "/", "power", "*"]
