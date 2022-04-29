@@ -10,6 +10,8 @@ First download the required packages
 - `pip install Flask`
 - `pip install pygame`
 - `pip install py_currency_converter`
+- `pip install pywhatkit`
+- `pip install translate`
 
 To execute the program in the CMD run
 
