@@ -44,6 +44,13 @@ while terminator:
                         assistantResponce(answer)
                         work = 0
 
+            # personal features
+            for phrase in FEATURES_WORDS:
+                if phrase in text and work:
+                    for answer in LIST_OF_FEATURES:
+                        assistantResponce(answer)
+                        work = 0
+
             # Get the current date
             for phrase in TODAY_DATE:
                 if phrase in text and work:
@@ -151,7 +158,7 @@ while terminator:
                     work = 0
 
             # Math Function
-            for phrase in MATH:
+            for phrase in MATH_WORDS:
                 if phrase in text and work:
                     responce = calculate(text)
                     assistantResponce(responce)

@@ -6,16 +6,16 @@ DAYS = ["monday", "tuesday", "wednesday",
 
 DAY_EXTENTIONS = ["rd", "th", "st", "nd"]
 
-WAKE_WORDS = ['hey computer', 'ok computer',
-              'hey olivia', 'hey oliva', 'hey olva', 'ok olivia']
+WAKE_WORDS = ['hey computer', 'ok computer', 'olivia',
+              'ok olivia', 'hey olivia', 'hey oliva', 'hey olva']
 
-NAME_KEYWORDS = ["what is your name",
-                 "what should I call you", "what's your name?"]
+NAME_KEYWORDS = ["what is your name", "what's your name",
+                 "what should I call you"]
 
 PERSONAL_INFORMATIONS = ["my name: Olivia.", "my mission: to assist you.",
                          "my favourite colour: probably black but it changes sometimes."]
 
-FEATURES_WORDS = ['what can you do?',
+FEATURES_WORDS = ['what can you do',
                   'what are you capable of', 'list your features']
 
 LIST_OF_FEATURES = ['make a note', 'flip a coin', 'set a timer']
@@ -43,5 +43,5 @@ CANCEL_MUSIC_KEY_WORDS = ['cancel music',
                           'music stop', 'stop music', 'music cancel']
 
 
-MATH = ["plus", "+", "Subtract", "-", "mins", "",
-        "multiplied", "multiply", "divided", "/", "power", "*"]
+MATH_WORDS = ["plus", "+", "Subtract", "-", "mins",
+              "multiplied", "multiply", "divided", "/", "power", "*"]
