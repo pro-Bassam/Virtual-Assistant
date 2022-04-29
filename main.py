@@ -65,16 +65,14 @@ while terminator:
                     assistantResponce(responce)
                     work = 0
 
-            # Tell me a Joke
-            for phrase in JOKES_KEY_WORDS:
+            # Make a note
+            for phrase in NOTE_STRS:
                 if phrase in text and work:
-                    response = getJoke()
-                    if response != 0:
-                        assistantResponce(response)
-                        playJokeSound()
-                        work = 0
-                    else:
-                        assistantResponce("Sorry can you try later")
+                    assistantResponce("What would you like me to write down?")
+                    write_down = recordAduio()
+                    makeNote(write_down)
+                    assistantResponce("I've made a note of that.")
+                    work = 0
 
             # cancel a timer
             for phrase in CANCEL_TIMER_KEY_WORDS:
@@ -95,6 +93,35 @@ while terminator:
                         assistantResponce(
                             f"Timer is seted successfully for {result}")
                         work = 0
+
+            # Math Function
+            for phrase in MATH_WORDS:
+                if phrase in text and work:
+                    responce = calculate(text)
+                    assistantResponce(responce)
+                    work = 0
+
+            # Currency Converter
+            for phrase in CUURENCY_KEY_WORDS:
+                if phrase in text and work:
+                    assistantResponce("what amount")
+                    amount = recordAduio()
+                    amount = int(amount)
+                    responce = currency(text, amount)
+                    assistantResponce(responce)
+                    work = 0
+
+            # cancel music
+            for phrase in CANCEL_MUSIC_KEY_WORDS:
+                if phrase in text and work:
+                    close_music()
+                    assistantResponce("the music is canceled successfully")
+                    work = 0
+
+            # Play a music by name
+            if 'play' in text and work:
+                run_music(text)
+                work = 0
 
             # Get Weather Temperature
             if "give me the temperature in" in text and work:
@@ -127,26 +154,16 @@ while terminator:
                 assistantResponce(rollDie())
                 work = 0
 
-            # cancel music
-            for phrase in CANCEL_MUSIC_KEY_WORDS:
+            # Tell me a Joke
+            for phrase in JOKES_KEY_WORDS:
                 if phrase in text and work:
-                    close_music()
-                    assistantResponce("the music is canceled successfully")
-                    work = 0
-
-            # Play a music by name
-            if 'play' in text and work:
-                run_music(text)
-                work = 0
-
-            # Make a note
-            for phrase in NOTE_STRS:
-                if phrase in text and work:
-                    assistantResponce("What would you like me to write down?")
-                    write_down = recordAduio()
-                    makeNote(write_down)
-                    assistantResponce("I've made a note of that.")
-                    work = 0
+                    response = getJoke()
+                    if response != 0:
+                        assistantResponce(response)
+                        playJokeSound()
+                        work = 0
+                    else:
+                        assistantResponce("Sorry can you try later")
 
             # Translate to French
             for phrase in TRANSLATE_KEY_WORDS:
@@ -154,23 +171,6 @@ while terminator:
                     assistantResponce("I am listening.")
                     sentence = recordAduio()
                     responce = trans(sentence)
-                    assistantResponce(responce)
-                    work = 0
-
-            # Math Function
-            for phrase in MATH_WORDS:
-                if phrase in text and work:
-                    responce = calculate(text)
-                    assistantResponce(responce)
-                    work = 0
-
-            # Currency Converter
-            for phrase in CUURENCY_KEY_WORDS:
-                if phrase in text and work:
-                    assistantResponce("what amount")
-                    amount = recordAduio()
-                    amount = int(amount)
-                    responce = currency(text, amount)
                     assistantResponce(responce)
                     work = 0
 

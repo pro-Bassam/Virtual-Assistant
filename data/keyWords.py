@@ -18,7 +18,7 @@ PERSONAL_INFORMATIONS = ["my name: Olivia.", "my mission: to assist you.",
 FEATURES_WORDS = ['what can you do',
                   'what are you capable of', 'list your features']
 
-LIST_OF_FEATURES = ['make a note', 'flip a coin', 'set a timer']
+LIST_OF_FEATURES = ['I can Search in wikipedia, make a note, set a timer, do basic math, Currency Conversion, Play music, Get the Temperature, Pick a Card for you, Tell you a random Fact, Tell jokes, Play Rock Paper Scissors, Flip a coin for you, Roll a die, Translate to French']
 
 BREAK_WORDS = ["break", "bye", "goodbye", "shut down"]
 
